@@ -6,7 +6,13 @@
     background-position: center;
     display: inline-block;
 }
+.container_botao:checked ~ .container_rotulo > .cabeçalho_menu_hamburgue {
+    background-image: url(../img/Menu-Aberto.svg);
+}
 
+.container_botao:checked ~ .container_rotulo {
+    background: var(--azul-degrade);
+}
 .cabeçalho {
     background-color: var(--branco);
     display: flex;
@@ -31,7 +37,7 @@
     width: 60vw;
 }
 
-.container_botao:checked~.lista-menu{
+.container_botao:checked~.lista-menu {
     display: block;
 }
 
@@ -56,3 +62,124 @@
 .container_botao {
     display: none;
 }
+
+.container_titulo {
+    display: none;
+}
+
+.opções_item {
+    display: none;
+    
+}
+
+.opções_menu , .opções_botão {
+    display: none;
+}
+
+.container_texto {
+    display: none;
+}
+
+
+@media screen and (min-width: 1024px){
+    .container_titulo, .container_titulo--negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;  
+    }
+
+    .container_titulo {
+        font-weight: 400;
+        display: block;
+    }
+
+    .opções_botão:checked~.opções_rotulo > .opções_item {
+        background: var(--azul-degrade);
+        color: var(--branco);
+        
+    }
+
+    .container_titulo--negrito {
+        font-weight: 700;
+    }
+
+    .opções {
+        display: flex;
+        
+    }
+
+    .opções_item {
+        padding: 1.3em 0.9em;
+        text-transform: uppercase;
+        display: block;
+        text-align: center;
+        margin: 0;
+        
+    }
+
+    .opções_link, .opções_item {
+        color: black; /* Cor padrão */
+        transition: 0.1s;
+        cursor: pointer;
+    }
+    
+    .opções_link:hover, .opções_item:hover,
+    .opções_link.ativ, .opções_item.ativ { /* Efeito ao hover e quando ativo */
+        color: var(--azul-degrade);
+        font-weight: 700;
+        font-size: 20px;
+        margin: 0;
+    }
+    
+    .opções_link , .opções_item {
+        text-decoration: none;
+        color: var(--preto);
+        text-transform: uppercase;
+    }
+
+    .container_iamgem--transparente {
+        display: none;
+    }
+
+    .cabeçalho_menu_hamburgue {
+        display: none;
+    }
+    
+    .opções_botão:checked~.lista-menu{
+        display: block;
+        width: auto;
+        font-weight: 500;
+    }
+
+    .lista_secundaria:hover {
+        background-color: var(--azul-degrade);
+        color: var(--branco);
+        
+    }
+    
+    .lista_secundaria:hover > .lista-menu_link {
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+    
+    .container_link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+   
+    .cabeçalho {
+        padding: 0 0.6em;
+    }
+
+    .opções {
+        margin-right:auto;
+        padding: 0.8;
+    }
+
+    .container_texto {
+        display: block;
+    }
+
+   
+}  
